@@ -4,6 +4,375 @@ $oafm-3: #03A678;
 $oafm-4: #F5882A;
 $oafm-5: #EFE7BE;
 
-p {
-  color: $oafm-3;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html{
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden !important;
+}
+
+body{
+  background-color: $oafm-2;
+}
+
+/* ------------------------------ First section ----------------------------- */
+
+header{
+  color: $oafm-5;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.header_introduction {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+  }
+  p {
+    font-weight: 100;
+  }
+}
+
+/* --------------------------------- Navbar --------------------------------- */
+
+#nav-bar{
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  
+  #nav-menu {
+    transition: height .5s ease-in-out;
+    overflow: hidden;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 5rem;
+    left: 0px;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    
+    li {
+      width: 8rem;
+      height: 3rem !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px){
+      height: auto;
+      position: static;
+      width: auto;
+      flex-direction: row;
+      align-items: center;
+      list-style: none;
+    }
+  }
+
+  #nav-menu:not(.active){
+    display: none;
+  }
+  
+  img {
+    height: 50%;
+  }
+}
+
+/* -------------------------------- About me -------------------------------- */
+
+.right-space{
+  float: right;
+  height: 48vw;
+  shape-outside:  polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.landing{
+  height: 48vw;
+  width: 100%;
+  background-image: linear-gradient(0deg, rgba(0,38,53,1) 0%, rgba(255,255,255,0) 11%), url("https://i.ibb.co/zZBJvxJ/Oscar21.png");
+  background-size: cover;
+  background-position: center;
+}
+.landing-content{
+  color: $oafm-5;
+  font-weight: 300;
+  font-style: italic;
+  h1 {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .landing {
+    height: 85vw;
+    background-position: left center;
+  }
+}
+@media only screen and (min-width: 2000px) {
+  .lower {
+    padding-top: 12rem !important;
+  }
+}
+
+.landing-photo{
+  float: left;
+  height: 48vw;
+  width: 54vw;
+  shape-outside: polygon(64% 1%, 68% 7%, 68% 15%, 67% 22%, 69% 26%, 75% 30%, 79% 37%, 81% 45%, 83% 53%, 86% 60%, 87% 65%, 87% 70%, 88% 79%, 89% 87%, 88% 94%, 86% 100%, 0 100%, 0 0, 61% 0);
+}
+
+/* -------------------------- Particles Background -------------------------- */
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display:block;
+  background-color: $oafm-1;
+  z-index: -100;
+}
+
+/* -------------------------------- Dividers -------------------------------- */
+
+.custom-shape-divider-bottom-1616363228 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1616363228 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 107px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1616363228 .shape-fill {
+  fill: $oafm-2;
+}
+
+// Second divider
+
+.custom-shape-divider-top-1633673713 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1633673713 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 103px;
+}
+
+.custom-shape-divider-top-1633673713 .shape-fill {
+  fill: $oafm-1;
+}
+
+/* https://www.digitalocean.com/community/tutorials/css-scrollbars */
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0f1a24 orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $oafm-2;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $oafm-3;
+  /* border-radius: 20px; */
+  /* border: 5px solid orange; */
+}
+
+/* Hamburger */
+#menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.line {
+  fill: none;
+  stroke: $oafm-5;
+  stroke-width: 4;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 4;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 4;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 4;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 4;
+}
+
+/* Hover Navbar */
+.h-nav{
+  background: 
+      linear-gradient(#F5882A 0 0) 
+      bottom /var(--d, 0) 3px 
+      no-repeat;
+  transition:0.5s;
+}
+.h-nav:hover {
+  --d: 100%;
+  cursor: pointer;
+}
+
+/* ---------------------------------- Cards --------------------------------- */
+
+.showcase{
+  background: $oafm-1;
+  color: $oafm-1;
+  position: relative;
+  h1 {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-size: 3rem;
+    color: $oafm-5; 
+  }
+  h3 {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+  }
+
+}
+
+.card-l {
+  background-color: $oafm-5;
+}
+
+/* -------------------------------- Timeline -------------------------------- */
+
+.timeline {
+  color: #EFE7BE;
+}
+
+.timeline-container {
+  position: relative;
+  color: $oafm-5;
+  h1 {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-size: 2rem;
+    margin-bottom: .5em;
+  }
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: .8rem;
+  }
+
+	width: 90%;
+	margin: 0 auto;
+}
+
+$border-color: $oafm-5;
+
+.timeline-item {
+	padding: 3em 2em 2em;
+	position: relative;
+	color: $oafm-5;
+	border-left: 2px solid $border-color;
+	
+	p {
+		font-size: 1rem;
+	}
+	&:first-child {
+    padding-top: 9em;
+    z-index: -1;
+    &::before {
+      top: 8.5em;
+    }
+    &::after {
+      top: 7em;
+    }
+  }
+
+	&::before {
+		content: attr(date-is);
+		position: absolute;
+		left: 2em;
+		font-weight: bold;
+		top: 1em;
+		display: block;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		font-size: .785rem;
+	}
+
+	&::after {
+		width: 10px;
+		height: 10px;
+		display: block;
+		top: 1em;
+		position: absolute;
+		left: -6px;
+		border-radius: 10px;
+		content: '';
+		border: 2px solid $border-color;
+		background: $oafm-4;
+	}
+
+	&:last-child {
+		border-image: linear-gradient(
+			to bottom,
+			$border-color 60%,
+			rgba($border-color, 0)) 1 100%
+		;
+	}
 }
