@@ -23,10 +23,12 @@ body{
 
 header{
   color: $oafm-5;
-  height: 100vh;
   display:flex;
   flex-direction: column;
   user-select: none;
+  .home_header{
+    height: 100vh;
+  }
 }
 
 .header_introduction {

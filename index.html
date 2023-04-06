@@ -48,10 +48,11 @@ title: Home
             src="{{ '/assets/svg/oafm.svg' | prepend: site.baseurl }}"
             alt="Oscar Fuentes Logo">
           <ul id="nav-menu">
-            <li class="h-nav">HOME</li>  
-            <li class="h-nav">ABOUT</li>
-            <li class="h-nav">BLOG</li>
-            <li class="h-nav">CONTACT</li>
+            {% for item in site.data.navigation %}
+              <li class="h-nav">
+                <a href="{{site.baseurl}}{{ item.link }}">{{ item.name }}</a>
+              </li>  
+            {% endfor %}
           </ul><button id="menu" class="flex md:hidden" onclick="this.classList.toggle('opened');" aria-label="Main Menu"><svg
               width="50" height="50" viewBox="0 0 100 100">
               <path class="line line1"
@@ -125,7 +126,7 @@ title: Home
         
         <div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <a href="#" class="card-l max-w-sm mx-auto group hover:no-underline focus:no-underline">
-            <img role="presentation" class="object-cover w-full h-44" src="https://source.unsplash.com/random/483x363">
+            <img role="presentation" class="object-cover w-full h-44" src="https://i.ibb.co/BjYSBsN/shell-eco.jpg">
             <div class="p-6 space-y-2">
               <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">Shell Ecomarathon</h3>
               <span class="text-xs">2017</span>
@@ -133,7 +134,7 @@ title: Home
             </div>
           </a>
           <a href="#" class="card-l max-w-sm mx-auto group hover:no-underline focus:no-underline">
-            <img role="presentation" class="object-cover w-full h-44" src="https://source.unsplash.com/random/483x363">
+            <img role="presentation" class="object-cover w-full h-44" src="https://i.ibb.co/xYX30W4/isam.jpg">
             <div class="p-6 space-y-2">
               <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">ISAM</h3>
               <span class="text-xs">2018</span>
@@ -141,7 +142,7 @@ title: Home
             </div>
           </a>
           <a href="#" class="card-l max-w-sm mx-auto group hover:no-underline focus:no-underline">
-            <img role="presentation" class="object-cover w-full h-44" src="https://source.unsplash.com/random/483x363">
+            <img role="presentation" class="object-cover w-full h-44" src="https://i.ibb.co/fvzLCCQ/Cardamom.jpg">
             <div class="p-6 space-y-2">
               <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">Cardamom Dryer</h3>
               <span class="text-xs">2019</span>
@@ -275,7 +276,7 @@ title: Home
     <!-- Particles.JS -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-      particlesJS.load('particles-js', 'assets/particles.json', function () {
+      particlesJS.load('particles-js', '/assets/particles.json', function () {
         console.log('callback - particles.js config loaded');
       });
     </script>
