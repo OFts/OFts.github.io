@@ -1,4 +1,4 @@
-<header class="max-w-7xl mx-auto {% if page.url == "/" %}home_header{% endif %}">
+<header class="max-w-7xl mx-auto {% if page.url == '/' %}h-screen{% endif %}">
   <div id="particles-js">
     <div id="nav-bar" class="px-8 md:px-20"><img
       src="/assets/svg/oafm.svg"
@@ -18,5 +18,12 @@
           d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
         </svg></button>
     </div>
+    {% if page.url == "/" %}
+      <div class="header_introduction px-8 md:px-20">
+        <h1 class="text-6xl md:text-7xl">Oscar Fuentes</h1>
+        <p class="text-3xl md:text-5xl">Mechanical Engineering</p>
+      </div>
+    {% endif %}
   </div>
+
 </header>
