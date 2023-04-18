@@ -16,7 +16,7 @@ body, html{
 }
 
 body{
-  background-color: $oafm-2;
+  background-color: $oafm-1;
 }
 
 /* ------------------------------ First section ----------------------------- */
@@ -333,7 +333,6 @@ $border-color: $oafm-5;
 	}
 	&:first-child {
     padding-top: 9em;
-    z-index: -1;
     &::before {
       top: 8.5em;
     }
