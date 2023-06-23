@@ -46,3 +46,14 @@ window.addEventListener('resize', ()=>{
     container.style.height = 'auto';
   }
 });
+
+// Detect the height of the app
+const documentHeight = () => {
+  // TODO Analizaar de hacer este por ID y no por clase
+  const doc = document.getElementsByClassName("h-screen-of")
+  //const doc = document.documentElement
+  doc[0].style.height = `${window.innerHeight}px`;
+}
+window.addEventListener("resize", documentHeight);
+
+documentHeight();
