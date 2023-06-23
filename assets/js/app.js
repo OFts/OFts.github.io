@@ -54,6 +54,5 @@ const documentHeight = () => {
   //const doc = document.documentElement
   doc[0].style.height = `${window.innerHeight}px`;
 }
-window.addEventListener("resize", documentHeight);
-
+//window.addEventListener("resize", documentHeight);
 documentHeight();
