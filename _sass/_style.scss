@@ -150,6 +150,12 @@ canvas{
   z-index: -100;
 }
 
+/* ---------------------------------- BLog ---------------------------------- */
+
+.blog-container {
+  background: linear-gradient(0deg, rgba(0,38,53,1) 0%, rgba(255,255,255,0) 100%);
+}
+
 /* -------------------------------- Dividers -------------------------------- */
 
 .custom-shape-divider-bottom-1616363228 {
@@ -200,7 +206,7 @@ canvas{
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #0f1a24 orange;
+  scrollbar-color: $oafm-2 $oafm-5;
 }
 
 /* Works on Chrome, Edge, and Safari */
