@@ -51,8 +51,11 @@ window.addEventListener('resize', ()=>{
 const documentHeight = () => {
   // TODO Analizaar de hacer este por ID y no por clase
   const doc = document.getElementsByClassName("h-screen-of")
-  //const doc = document.documentElement
-  doc[0].style.height = `${window.innerHeight}px`;
+
+  if (window.innerHeight != doc[0].offsetHeight){
+    doc[0].style.height = `${window.innerHeight}px`;
+    // console.log("cambiado");
+  }
 }
-//window.addEventListener("resize", documentHeight);
+
 documentHeight();
